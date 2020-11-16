@@ -8,20 +8,15 @@ import pandas as pd
 
 # Import from happymonday
 import happymonday
-from happymonday.lib import clean_data
+from happymonday.lib import get_url
+
+
+def get_url():
+    webbrowser.open("https://www.youtube.com/watch?v=mrZRURcb1cM")
+
 
 if __name__ == '__main__':
-    usage = '%(prog)s'
-    description = 'happymonday_description'
-    # https://docs.python.org/3/library/argparse.html
-    # https://docs.python.org/3/howto/argparse.html
-    parser = argparse.ArgumentParser(description=description, usage=usage)
-    args = parser.parse_args()
-    folder_source, _ = split(happymonday.__file__)
-    df = pd.read_csv('{}/data/data.csv.gz'.format(folder_source))
-    print('  happymonday/data/data.csv.gz Loaded')
+    # For introspections purpose to quickly get this functions on ipython
+    import happymonday
+    try_me()
 
-    res = clean_data(df)
-    res.to_csv('out.csv', index=False)
-    print('==> out.csv MADE ')
-    print('    shape is {}'.format(res.shape))
