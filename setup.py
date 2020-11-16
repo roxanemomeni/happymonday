@@ -6,6 +6,7 @@ with open('requirements.txt') as f:
 requirements = [x.strip() for x in content if 'git+' not in x]
 
 setup(name='happymonday',
+      install_requires=requirements,
       version="1.0",
       description="Project Description",
       packages=find_packages(),
