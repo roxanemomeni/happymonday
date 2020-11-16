@@ -1,0 +1,3 @@
+graft happymonday
+global-exclude *.py[cod] __pycache__ *.so *.ipynb
+recursive-exclude  happymonday/jupy *
